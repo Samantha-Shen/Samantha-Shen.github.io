@@ -1,0 +1,45 @@
+---
+title: "Resume"
+output: html_document
+---
+
+
+# Samantha Shen
+- Email: <rs4788.cumc.columbia.edu>
+- Location: New York, United States
+
+
+## Education
+- **Cornell University**, Bachelor of Science, Food Science, *2021-2025*.
+
+- **Columbia University**, Master of Science, Biostatistics, *2025-Present*.
+
+## Publications
+- Yanjun Lia, **Ruhui Shen**, Juntao Zhang, Shuaibei Wang, Yichen Liu, Haixia Yang. “Extraction and characterization of bioactive compounds, function, and application from Lycium seed: A review”. *Food and Bioprocess Technology*.
+
+## Research Experience
+**Bioavailability and blood pressure-lowering effect of Lycium seed extracts**,  *10/2023 – 01/2024*
+
+- Conducted animal experiments on rats to assess the bioavailability and antihypertensive effects of Lycium seed extracts.
+- Performed orbital blood sampling in rats and non-targeted metabolomics on the extracted blood to assess the bioavailability of Lycium seed extract.
+
+**Characterization and Geographical Analysis of Bioactive Compounds and Polyphenols in Black Wolfberry Seeds**,  *10/2022 - 12/2023*
+
+- Conducted comprehensive research on the extraction and characterization of bioactive compounds and polyphenols from black wolfberry seeds to explore their economic potential and support sustainable agricultural practices.
+- Utilized non-targeted metabolomic analysis and liquid chromatography-mass spectrometry (LC-MS) for profiling various bioactive compounds, applying PLS-DA, heat mapping, PCA, and random forest modeling to assess inter-varietal differences and the influence of geographical origins.
+
+**Natural Berry Juice for Immune Enhancement**,  *03/2023 - 06/2023*
+
+- Led a team of 8 students and completed a comprehensive project proposal covering presentation, product introduction, market analysis, strategic planning, process statement, product packaging, financial analysis, and more.
+
+## Internship Experience
+**AstraZeneca-Precision Medicine and Biosamples Department**, *08/01/2023 – 08/31/2023*
+
+- Gained comprehensive knowledge of Good Clinical Practice (GCP), understanding the responsibilities, goals, and regulations within the biopharmaceutical industry.
+- Studied key aspects of precision medicine, particularly related to oncology, including diagnostic methods, mechanisms of targeted therapies, classification and updates of drugs, and clinical trial processes.
+
+## Skills
+- Programming: R, Python
+- Analytical Chemistry: HPLC, Spectroscopy, ELISA
+- Biotechnology: Skilled in PCR, DNA sequencing, Whole Genome Sequencing (WGS), RNA-seq, cloning techniques
+- Domain: Food Science, Public Health, Biostatistics
