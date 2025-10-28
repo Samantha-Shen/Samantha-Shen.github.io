@@ -1,0 +1,18 @@
+---
+title: "Welcome"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    code_folding: hide
+
+knitr:
+  opts_knit:
+    root.dir: !expr here::here()
+---
+
+# Hi, this is Samantha's website
+
+I am currently pursuing a Master of Science in Biostatistics within the field of Public Health at Columbia University.
+
+For more details about my professional background, please see the "Resume" section in the navigation bar. For additional background information, please visit the "About" page.

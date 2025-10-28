@@ -1,0 +1,27 @@
+name: "Samantha's website"
+output_dir: "."
+navbar:
+  title: "Samantha Shen"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Resume"
+      href: resume.html
+    - text: "About"
+      href: about.html
+  right:
+    - icon: fa-github
+      href: "https://github.com/Samantha_Shen"
+    - icon: fa-linkedin
+      href: "https://www.linkedin.com/in/Samantha_Shen/"
+    - icon: fa-envelope
+      href: mailto:<rs4788.cumc.columbia.edu>
+output:
+  html_document:
+    theme: cosmo
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    df_print: paged
+    includes:
+      in_header: null 
