@@ -1,0 +1,140 @@
+---
+title: "NY NOAA"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+data("ny_noaa")
+
+noaa =
+  ny_noaa %>%
+  mutate(
+    across(c(prcp, snow, snwd, tmax, tmin),
+           ~ suppressWarnings(as.numeric(.)))
+  ) %>%
+  mutate(
+    date = as.Date(date),
+    year = year(date),
+    month = month(date),
+    day = day(date),
+    tmax_c = ifelse(is.na(tmax), NA_real_, tmax / 10),
+    tmin_c = ifelse(is.na(tmin), NA_real_, tmin / 10),
+    ) %>%
+  select(id, date, year, month, tmax_c, tmin_c)
+```
+
+
+```{r}
+id_top =
+  noaa %>%
+  drop_na(tmax_c) %>%
+  count(id, sort = TRUE) %>%
+  slice(1) %>%
+  pull(id)
+year_pick =
+  noaa %>%
+  filter(id == id_top, !is.na(tmax_c)) %>%
+  count(year, sort = TRUE)%>%
+  slice(1) %>%
+  pull(year)
+
+line_df =
+  noaa %>%
+  filter(id == id_top, year == year_pick) %>%
+  group_by(date) %>%
+  summarise(mean_tmax = mean(tmax_c, na.rm = TRUE), .groups = "drop")
+
+N_box = min(80000, sum(!is.na(noaa$tmax_c)))
+box_df = 
+  noaa %>%
+  drop_na(tmax_c) %>%
+  slice_sample(n = N_box) %>%
+  mutate(
+    season = case_when(
+      month %in% c(12, 1, 2) ~ "Winter",
+      month %in% c(3,  4, 5) ~ "Spring",
+      month %in% c(6,  7, 8) ~ "Summer",
+      month %in% c(9, 10,11) ~ "Autumn"
+    ),
+    month = factor(month, levels = 1:12, labels = month.abb)
+  )
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Scatterplot
+
+```{r}
+noaa %>%
+  drop_na(tmin_c, tmax_c) %>%
+  slice_sample(n = 4000) %>%
+  plot_ly(x = ~tmin_c, y = ~tmax_c,
+          color = ~month, colors = viridisLite::viridis(12),
+          type = "scatter", mode = "markers",
+          marker = list(size = 5, opacity = 0.6)) %>%
+  layout(title = "tmax vs tmin (°C)",
+         xaxis = list(title = "tmin (°C)"),
+         yaxis = list(title = "tmax (°C)"))
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Box plot
+
+```{r}
+plot_ly(
+  box_df,
+  x = ~month, y = ~tmax_c,
+  type = "box",
+  boxpoints = "outliers",
+  boxmean = TRUE,
+  split = ~season
+) %>%
+  layout(
+    colorway = viridisLite::viridis(4),
+    showlegend = TRUE,
+    legend = list(orientation = "h"),
+    title = paste0("Monthly tmax (", "\u00B0", "C) by season"),
+    xaxis = list(title = "Month"),
+    yaxis = list(title = paste0("tmax (", "\u00B0", "C)"))
+  )
+```
+
+
+### Line plot
+
+```{r}
+plot_ly(
+  line_df, x=~date, y=~mean_tmax,
+        type="scatter", mode="lines") %>%
+  layout(
+    title = paste0("Daily mean tmax — (", year_pick, ")"),
+    xaxis = list(
+      title = "Month",
+      tickformat = "%b",
+      dtick = "M1",
+      ticklabelmode = "period",
+      showgrid = FALSE, zeroline = FALSE, ticks = "outside"
+    ),
+    yaxis = list(
+      title = paste0("tmax (", "\u00B0", "C)"),
+      dtick = 5, zeroline = FALSE, ticks = "outside"
+    )
+  )
+```

@@ -7,6 +7,8 @@ navbar:
       href: index.html
     - text: "Resume"
       href: resume.html
+    - text: "NY NOAA"
+      href: nynoaa.html
 
   right:
     - icon: fa-github
@@ -14,11 +16,7 @@ navbar:
     - icon: fa-envelope
       href: mailto:<rs4788.cumc.columbia.edu>
 output:
-  html_document:
+   html_document:
     theme: cosmo
     toc: true
-    toc_depth: 2
     toc_float: true
-    df_print: paged
-    includes:
-      in_header: null 

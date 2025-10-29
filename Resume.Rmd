@@ -41,5 +41,5 @@ output: html_document
 ## Skills
 - Programming: R, Python
 - Analytical Chemistry: HPLC, Spectroscopy, ELISA
-- Biotechnology: Skilled in PCR, DNA sequencing, Whole Genome Sequencing (WGS), RNA-seq, cloning techniques
+- Biotechnology: PCR, DNA sequencing, Whole Genome Sequencing (WGS), RNA-seq, Cloning techniques
 - Domain: Food Science, Public Health, Biostatistics
