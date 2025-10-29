@@ -4,6 +4,7 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    source: embed
 ---
 
 
@@ -12,8 +13,6 @@ library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
-
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 ```
 
 ```{r}
@@ -113,8 +112,7 @@ plot_ly(
                   y = -0.15, yanchor = "top"),
     title = paste0("Monthly tmax (", "\u00B0", "C) by season"),
     xaxis = list(title = "Month", automargin = TRUE),
-    yaxis = list(title = paste0("tmax (", "\u00B0", "C)"), automargin = TRUE),
-    margin = list(b = 90, t = 50, l = 60, r = 20)
+    yaxis = list(title = paste0("tmax (", "\u00B0", "C)"), automargin = TRUE)
   )
 ```
 
