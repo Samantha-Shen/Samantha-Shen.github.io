@@ -7,13 +7,10 @@ navbar:
       href: index.html
     - text: "Resume"
       href: resume.html
-    - text: "About"
-      href: about.html
+
   right:
     - icon: fa-github
-      href: "https://github.com/Samantha_Shen"
-    - icon: fa-linkedin
-      href: "https://www.linkedin.com/in/Samantha_Shen/"
+      href: "https://github.com/Samantha-Shen"
     - icon: fa-envelope
       href: mailto:<rs4788.cumc.columbia.edu>
 output:
