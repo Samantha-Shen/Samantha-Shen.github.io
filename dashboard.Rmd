@@ -107,12 +107,14 @@ plot_ly(
   layout(
     colorway = viridisLite::viridis(4),
     showlegend = TRUE,
-    legend = list(orientation = "h",
-                  x = 0.5, xanchor = "center",
-                  y = -0.15, yanchor = "top"),
-    title = paste0("Monthly tmax (", "\u00B0", "C) by season"),
-    xaxis = list(title = "Month", automargin = TRUE),
-    yaxis = list(title = paste0("tmax (", "\u00B0", "C)"), automargin = TRUE)
+    legend = list(
+      orientation = "h",
+      x = 0.5, xanchor = "center",
+      y = 1.02, yanchor = "bottom"),
+    title = list(text = "Monthly tmax (\u00B0C) by season"),
+    xaxis = list(title = list(text = "Month"), automargin = TRUE),
+    yaxis = list(title = list(text = "tmax (\u00B0C)"), automargin = TRUE),
+    margin = list(t = 70, b = 50, l = 60, r = 20)
   )
 ```
 
