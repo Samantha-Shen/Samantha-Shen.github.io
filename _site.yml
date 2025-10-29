@@ -15,6 +15,8 @@ navbar:
       href: "https://github.com/Samantha-Shen"
     - icon: fa-envelope
       href: mailto:<rs4788.cumc.columbia.edu>
+    - icon: fa-graduation-cap
+      href: "https://doi.org/10.48130/fia-0025-0020"
 output:
    html_document:
     theme: cosmo
