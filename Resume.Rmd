@@ -5,7 +5,7 @@ output: html_document
 
 
 # Samantha Shen
-- Email: <rs4788.cumc.columbia.edu>
+- Email: rs4788@cumc.columbia.edu
 - Location: New York, United States
 
 
