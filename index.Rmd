@@ -10,6 +10,8 @@ knitr:
 
 # Hi, this is Samantha's website
 
-I am currently pursuing a Master of Science in Biostatistics within the field of Public Health at Columbia University.
+I am currently pursuing a Master of Science in Biostatistics concentrating in Public Health Data Science within the field of Public Health at Columbia University.
 
 For more details about my professional background, please see the "Resume" section in the navigation bar.
+
+The "NY NOAA" section showcases my recent project, where I wrangle and visualize NOAA’s GHCN-Daily data from the National Centers for Environmental Information using R.
